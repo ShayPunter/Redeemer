@@ -1,0 +1,6 @@
+redeemables: "&7You can redeem the following: &c%redeemables%"
+noPermissionForRedeemable: "&cYou don't have permission to redeem this redeemable"
+cannotRedeem: "&cYou cannot redeem this redeemable anymore!"
+redeemed: "&aYou have redeemed %redeemable%, you can redeem this %redeemableTimes% more times!"
+noPermission: "&cYou don't have permission to run this command!"
+noRedeemables: "&cYou have nothing to redeem!"
