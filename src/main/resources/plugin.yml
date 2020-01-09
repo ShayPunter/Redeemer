@@ -1,6 +1,6 @@
 name: Redeemer
 main: co.uk.shaypunter.minecraft.redeemer.Redeemer
-version: 1
+version: 1.0.1
 author: ShayPunter
 commands:
   redeem:

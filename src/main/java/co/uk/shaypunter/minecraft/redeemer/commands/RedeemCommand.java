@@ -8,6 +8,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class RedeemCommand implements CommandExecutor {
@@ -56,7 +57,16 @@ public class RedeemCommand implements CommandExecutor {
         }
 
         List<String> redeemables = redeemer.getRedeemables();
-        redeemables.removeIf(redeems -> !redeemer.hasRedeemablePermission((Player) sender, redeems));
+        List<String> remove = new ArrayList<>();
+        redeemables.forEach((redeemable) -> {
+            if (Integer.parseInt(redeemer.getRedeemedUser(redeemable, ((Player)sender).getUniqueId()).split(":")[1]) >= (Redeemer.getInstance().getRedeemableTimes(redeemable) - 1))
+                remove.add(redeemable);
+
+            if (!redeemer.hasRedeemablePermission((Player) sender, redeemable))
+                remove.add(redeemable);
+        });
+        redeemables.removeAll(remove);
+        remove.clear();
 
         StringBuilder stringBuilder = new StringBuilder();
         redeemables.forEach((redeemable) -> {

@@ -24,6 +24,8 @@ public class Redeemer extends JavaPlugin {
         getConfig("messages");
 
         getCommand("redeem").setExecutor(new RedeemCommand());
+
+        new Metrics(this);
     }
 
     @Override
@@ -33,6 +35,16 @@ public class Redeemer extends JavaPlugin {
 
     public List<String> getRedeemableCommands(String redeemable) {
         return getConfig().getStringList("redeemables." + redeemable + ".commands");
+    }
+
+
+    /**
+     * Gets the amount of time a redeemable can be redeemed
+     * @param redeemable redeemable to use
+     * @return time a redeemable can be used
+     */
+    public Integer getRedeemableTimes(String redeemable) {
+        return Redeemer.getInstance().getConfig().getInt("redeemables." + redeemable + "timesCanRedeem");
     }
 
     /**
