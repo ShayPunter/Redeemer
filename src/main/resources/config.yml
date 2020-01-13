@@ -1,5 +1,6 @@
 # All information relating to configuring this can be found
 # at the wiki on GitHub https://github.com/ShayPunter/Redeemer/wiki/Configuration-Guide
+CONFIG-VERSION: 1 #Do not change
 
 redeemables:
   example:

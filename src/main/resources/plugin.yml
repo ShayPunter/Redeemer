@@ -1,8 +1,9 @@
 name: Redeemer
 main: co.uk.shaypunter.minecraft.redeemer.Redeemer
-version: 1.0.1
+version: 1.0.2
 author: ShayPunter
 commands:
   redeem:
     description: "Redeem an code!"
     usage: /redeem [code/reload]
+    aliases: ["code", "redeemer"]
